@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Dream Journal",
-    "slug": "Dream Journal",
+    "slug": "dream-journal",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -48,6 +48,16 @@
           }
         ]
       ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b7e224b6-f5f8-4411-b3bd-8434208430f0"
+      }
+    },
+    "owner": "marcosveloso",
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/b7e224b6-f5f8-4411-b3bd-8434208430f0"
     }
   }
 }
