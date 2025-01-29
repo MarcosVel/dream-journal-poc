@@ -1,20 +1,98 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import Voice from "@react-native-voice/voice";
 
-export default function App() {
+const App = () => {
+  const [isRecording, setIsRecording] = useState(false);
+  const [transcription, setTranscription] = useState("");
+
+  useEffect(() => {
+    Voice.onSpeechStart = () => setIsRecording(true);
+    Voice.onSpeechEnd = () => setIsRecording(false);
+    Voice.onSpeechResults = (event) => setTranscription(event.value[0]);
+    Voice.onSpeechError = (event) => {
+      Alert.alert("Error", event.error.message);
+      setIsRecording(false);
+    };
+
+    return () => {
+      Voice.destroy().then(Voice.removeAllListeners);
+    };
+  }, []);
+
+  const startRecording = async () => {
+    try {
+      await Voice.start("en-US");
+    } catch (error) {
+      Alert.alert("Permission Needed", "Please allow the app to record audio.");
+    }
+  };
+
+  const stopRecording = async () => {
+    await Voice.stop();
+  };
+
+  const clearTranscription = () => {
+    setTranscription("");
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>Speech to Text</Text>
+      <Text style={styles.transcription}>
+        {transcription || "Say something..."}
+      </Text>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={isRecording ? stopRecording : startRecording}
+      >
+        <Ionicons
+          name={isRecording ? "mic-off" : "mic"}
+          size={32}
+          color="white"
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.clearButton} onPress={clearTranscription}>
+        <Text style={styles.clearText}>Clear</Text>
+      </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f4f4f4",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  transcription: {
+    fontSize: 18,
+    marginVertical: 20,
+    textAlign: "center",
+    paddingHorizontal: 20,
+  },
+  button: {
+    backgroundColor: "#007AFF",
+    padding: 15,
+    borderRadius: 50,
+    marginBottom: 20,
+  },
+  clearButton: {
+    backgroundColor: "#FF3B30",
+    padding: 10,
+    borderRadius: 5,
+  },
+  clearText: {
+    color: "white",
+    fontWeight: "bold",
   },
 });
+
+export default App;
