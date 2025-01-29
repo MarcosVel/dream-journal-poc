@@ -11,6 +11,12 @@ React Native app using Expo and `react-native-voice` implementing speech-to-text
 - Button to copy to clipboard the transcription
 - A clear button to reset the screen and allow a new recording
 
+## Run expo link – _only for iOS Simulators_
+
+Download from this [link](https://expo.dev/accounts/marcosveloso/projects/dream-journal/builds/859fc82a-d081-449c-851d-618dea9db65a)
+
+To run this build on your local simulator, download the build, unzip it, then drag it onto a simulator. [Video example](https://static.expo.dev/static/videos/simulator-build-artifact.mp4)
+
 ## Run Locally
 
 Clone the project
@@ -63,7 +69,7 @@ To build with `expo eas` installing on iOS Simulator
 
 - **Expo:** Simplifies development, testing, and deployment with built-in tools and libraries
 - **Reanimated:** Smooth and performant animations
-- **expo-haptics:** Improves interaction by adding tactile feedback
+- **expo-haptics:** Improves interaction by adding tactile feedback – _only works on physical devices_
 - **expo-splash-screen:** Ensures a professional app launch experience with controlled splash screens
 - **@react-native-voice/voice:** Enables voice input and live transcription
 - **expo-dev-client:** Facilitates native development and debugging without needing a full rebuild

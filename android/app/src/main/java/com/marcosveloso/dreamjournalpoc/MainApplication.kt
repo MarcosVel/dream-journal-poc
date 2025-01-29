@@ -1,4 +1,4 @@
-package com.anonymous.dreamjournalpoc
+package com.marcosveloso.dreamjournalpoc
 
 import android.app.Application
 import android.content.res.Configuration

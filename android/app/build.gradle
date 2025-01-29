@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.dreamjournalpoc'
+    namespace 'com.marcosveloso.dreamjournalpoc'
     defaultConfig {
-        applicationId 'com.anonymous.dreamjournalpoc'
+        applicationId 'com.marcosveloso.dreamjournalpoc'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
