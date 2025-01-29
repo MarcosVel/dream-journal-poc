@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'dream-journal-poc'
+rootProject.name = 'Dream Journal'
 
 dependencyResolutionManagement {
   versionCatalogs {

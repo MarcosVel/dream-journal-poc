@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "dream-journal-poc",
-    "slug": "dream-journal-poc",
+    "name": "Dream Journal",
+    "slug": "Dream Journal",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#007AFF"
     },
     "ios": {
       "supportsTablet": true,
@@ -24,7 +24,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#007AFF"
       },
       "package": "com.anonymous.dreamjournalpoc"
     },
@@ -33,11 +33,20 @@
     },
     "expo": {
       "plugins": [
-        "@react-native-voice/voice",
-        {
-          "microphonePermission": "CUSTOM: Allow $(PRODUCT_NAME) to access the microphone",
-          "speechRecognitionPermission": "CUSTOM: Allow $(PRODUCT_NAME) to securely recognize user speech"
-        }
+        [
+          "@react-native-voice/voice",
+          {
+            "microphonePermission": "CUSTOM: Allow $(PRODUCT_NAME) to access the microphone",
+            "speechRecognitionPermission": "CUSTOM: Allow $(PRODUCT_NAME) to securely recognize user speech"
+          }
+        ],
+        [
+          "expo-splash-screen",
+          {
+            "backgroundColor": "#007AFF",
+            "image": "./assets/splash-icon.png"
+          }
+        ]
       ]
     }
   }
