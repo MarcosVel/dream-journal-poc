@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "dreamjournalpoc.app"
-               BlueprintName = "dreamjournalpoc"
-               ReferencedContainer = "container:dreamjournalpoc.xcodeproj">
+               BuildableName = "DreamJournal.app"
+               BlueprintName = "DreamJournal"
+               ReferencedContainer = "container:DreamJournal.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "dreamjournalpocTests.xctest"
-               BlueprintName = "dreamjournalpocTests"
-               ReferencedContainer = "container:dreamjournalpoc.xcodeproj">
+               BuildableName = "DreamJournalTests.xctest"
+               BlueprintName = "DreamJournalTests"
+               ReferencedContainer = "container:DreamJournal.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "dreamjournalpoc.app"
-            BlueprintName = "dreamjournalpoc"
-            ReferencedContainer = "container:dreamjournalpoc.xcodeproj">
+            BuildableName = "DreamJournal.app"
+            BlueprintName = "DreamJournal"
+            ReferencedContainer = "container:DreamJournal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "dreamjournalpoc.app"
-            BlueprintName = "dreamjournalpoc"
-            ReferencedContainer = "container:dreamjournalpoc.xcodeproj">
+            BuildableName = "DreamJournal.app"
+            BlueprintName = "DreamJournal"
+            ReferencedContainer = "container:DreamJournal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
