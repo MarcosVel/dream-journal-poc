@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+  Linking,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Voice from "@react-native-voice/voice";
 
@@ -12,6 +19,45 @@ const App = () => {
     Voice.onSpeechEnd = () => setIsRecording(false);
     Voice.onSpeechResults = (event) => setTranscription(event.value[0]);
     Voice.onSpeechError = (event) => {
+      if (
+        event.error.code === "recognition_fail" &&
+        event.error.message === "1110/No speech detected"
+      ) {
+        return Alert.alert(
+          "No speech detected",
+          "Please verify your Microphone permissions.",
+          [
+            {
+              text: "Cancel",
+              style: "cancel",
+              onPress: () => setIsRecording(false),
+            },
+            {
+              text: "Open settings",
+              onPress: () => Linking.openSettings(),
+            },
+          ]
+        );
+      }
+
+      if (event.error.message === "User denied access to speech recognition") {
+        return Alert.alert(
+          "Permission Needed",
+          "Please allow the app to use Speech Recognition.",
+          [
+            {
+              text: "Cancel",
+              style: "cancel",
+              onPress: () => setIsRecording(false),
+            },
+            {
+              text: "Open settings",
+              onPress: () => Linking.openSettings(),
+            },
+          ]
+        );
+      }
+
       Alert.alert("Error", event.error.message);
       setIsRecording(false);
     };
@@ -25,7 +71,21 @@ const App = () => {
     try {
       await Voice.start("en-US");
     } catch (error) {
-      Alert.alert("Permission Needed", "Please allow the app to record audio.");
+      Alert.alert(
+        "Permission Needed",
+        "Please allow the app to record audio using your Microphone and Speech Recognition.",
+        [
+          {
+            text: "Cancel",
+            style: "cancel",
+            onPress: () => setIsRecording(false),
+          },
+          {
+            text: "Open settings",
+            onPress: () => Linking.openSettings(),
+          },
+        ]
+      );
     }
   };
 
