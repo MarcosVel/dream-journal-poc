@@ -1,8 +1,7 @@
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
-import { Header, SpeechToText } from "./src/components";
-import { COLORS } from "./src/theme/colors";
+import { AuthProvider } from './src/context/UserContext';
+import Routes from './src/routes';
 
 SplashScreen.preventAutoHideAsync();
 SplashScreen.setOptions({
@@ -15,19 +14,11 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Header />
-      <SpeechToText />
-    </SafeAreaView>
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    backgroundColor: COLORS.white300,
-  },
-});
 
 export default App;

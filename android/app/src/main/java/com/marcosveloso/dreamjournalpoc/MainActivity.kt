@@ -1,4 +1,4 @@
-package com.anonymous.dreamjournalpoc
+package com.marcosveloso.dreamjournalpoc
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
